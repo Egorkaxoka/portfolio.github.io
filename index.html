@@ -3,19 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Портфолио fullstack разработчика Егора Темникова. React, Node.js, веб-приложения">
-    <meta property="og:title" content="Портфолио - Егор Темников">
-    <meta property="og:description" content="Создаю современные веб-приложения с чистым кодом">
-    <meta property="og:type" content="website">
-    <title>Портфолио | Егор Темников — Fullstack разработчик</title>
+    <title data-i18n="meta.title">Портфолио | Егор Темников — Fullstack разработчик</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Прелоадер -->
     <div class="preloader">
         <div class="preloader__spinner"></div>
-        <p class="preloader__text">Загружаю портфолио...</p>
+        <div class="preloader__text" data-i18n="preloader.text">Загружаю портфолио...</div>
     </div>
 
     <!-- Навигация -->
@@ -23,211 +20,178 @@
         <div class="container">
             <a href="#" class="logo">&lt;Dev/&gt;</a>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link active">Главная</a></li>
-                <li><a href="#about" class="nav-link">Обо мне</a></li>
-                <li><a href="#skills" class="nav-link">Навыки</a></li>
-                <li><a href="#projects" class="nav-link">Проекты</a></li>
-                <li><a href="#contact" class="nav-link">Контакты</a></li>
+                <li><a href="#home" class="nav-link" data-i18n="nav.home">Главная</a></li>
+                <li><a href="#about" class="nav-link" data-i18n="nav.about">Обо мне</a></li>
+                <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Навыки</a></li>
+                <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Проекты</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Контакты</a></li>
             </ul>
-            <button class="theme-toggle" id="themeToggle" aria-label="Сменить тему">
-                <span class="theme-icon">🌙</span>
-            </button>
-            <button class="burger" id="burger" aria-label="Меню">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+                    <span class="lang-icon">RU</span>
+                </button>
+                <button class="burger" id="burger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero секция -->
+    <!-- Hero -->
     <section class="hero" id="home">
-        <canvas id="particles" role="presentation"></canvas>
+        <canvas id="particles"></canvas>
         <div class="container hero__content">
-            <p class="hero__greeting fade-in">Привет, меня зовут</p>
-            <h1 class="hero__title fade-in delay-1">Егор Темников</h1>
-            <h2 class="hero__subtitle fade-in delay-2">
+            <p class="hero__greeting fade-in delay-1" data-i18n="hero.greeting">Привет, меня зовут</p>
+            <h1 class="hero__title fade-in delay-2" data-i18n="hero.name">Егор Темников</h1>
+            <h2 class="hero__subtitle fade-in delay-3">
                 <span class="typed-text"></span><span class="cursor">|</span>
             </h2>
-            <p class="hero__description fade-in delay-3">
+            <p class="hero__description fade-in delay-4" data-i18n="hero.desc">
                 Создаю современные веб-приложения с чистым кодом и вниманием к деталям.
             </p>
-            <div class="hero__buttons fade-in delay-4">
-                <a href="#projects" class="btn btn-primary">Посмотреть работы</a>
-                <a href="#contact" class="btn btn-secondary">Связаться со мной</a>
+            <div class="hero__buttons fade-in delay-5">
+                <a href="#projects" class="btn btn-primary" data-i18n="hero.btn1">Посмотреть работы</a>
+                <a href="#contact" class="btn btn-secondary" data-i18n="hero.btn2">Связаться со мной</a>
             </div>
-            <div class="scroll-indicator fade-in delay-5">
-                <span>Прокрутите вниз</span>
-                <div class="scroll-arrow"></div>
-            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span data-i18n="hero.scroll">Прокрутите вниз</span>
+            <div class="scroll-arrow"></div>
         </div>
     </section>
 
-    <!-- Обо мне -->
+    <!-- About -->
     <section class="about" id="about">
         <div class="container">
-            <h2 class="section-title reveal">Обо мне</h2>
+            <h2 class="section-title reveal" data-i18n="about.title">Обо мне</h2>
+            <p class="section-subtitle reveal" data-i18n="about.subtitle">Fullstack разработчик с 1 годом опыта</p>
             <div class="about__grid">
-                <div class="about__image reveal reveal-left">
-                    <div class="about__image-wrapper">
-                        <div class="about__image-placeholder">
-                            <span>👨‍💻</span>
-                        </div>
-                    </div>
+                <div class="about__image-wrapper reveal reveal-left">
+                    <div class="about__image-placeholder">👨‍💻</div>
                 </div>
                 <div class="about__text reveal reveal-right">
-                    <h3>Fullstack разработчик с 1 годом опыта</h3>
-                    <p>
-                        Я специализируюсь на создании современных веб-приложений, которые не только красиво выглядят, но и отлично работают. Мой стек включает HTML5, CSS3, JavaScript, React, Vue.js, Node.js, Express, PostgreSQL и MongoDB.
-                    </p>
-                    <p>
-                        Люблю решать сложные задачи, изучать новые технологии и делиться знаниями с командой. Сейчас углубляюсь в TypeScript, Next.js и DevOps практики.
-                    </p>
+                    <p data-i18n="about.text1">Я специализируюсь на создании современных веб-приложений, которые не только красиво выглядят, но и отлично работают. Мой стек включает HTML5, CSS3, JavaScript, React, Vue.js, Node.js, Express, PostgreSQL и MongoDB.</p>
+                    <p data-i18n="about.text2">Люблю решать сложные задачи, изучать новые технологии и делиться знаниями с командой. Сейчас углубляюсь в TypeScript, Next.js и DevOps практики.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Навыки -->
+    <!-- Skills -->
     <section class="skills" id="skills">
         <div class="container">
-            <h2 class="section-title reveal">Мои навыки</h2>
-            <p class="section-subtitle reveal">Технологии, с которыми я работаю ежедневно</p>
+            <h2 class="section-title reveal" data-i18n="skills.title">Мои навыки</h2>
+            <p class="section-subtitle reveal" data-i18n="skills.subtitle">Технологии, с которыми я работаю ежедневно</p>
             <div class="skills__grid">
-                <div class="skill-card reveal" data-delay="0">
+                <div class="skill-card reveal">
                     <div class="skill-icon">⚛️</div>
-                    <h3>Frontend</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="85"></div>
-                    </div>
-                    <p>React, Vue.js, Next.js</p>
+                    <h3 data-i18n="skills.frontend">Frontend</h3>
+                    <p data-i18n="skills.frontend.desc">React, Vue.js, Next.js</p>
                 </div>
-                <div class="skill-card reveal" data-delay="100">
+                <div class="skill-card reveal">
                     <div class="skill-icon">🚀</div>
-                    <h3>Backend</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="82"></div>
-                    </div>
-                    <p>Node.js, Python</p>
+                    <h3 data-i18n="skills.backend">Backend</h3>
+                    <p data-i18n="skills.backend.desc">Node.js, Python</p>
                 </div>
-                <div class="skill-card reveal" data-delay="200">
+                <div class="skill-card reveal">
                     <div class="skill-icon">🗄️</div>
-                    <h3>Базы данных</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="80"></div>
-                    </div>
-                    <p>PostgreSQL, MongoDB</p>
+                    <h3 data-i18n="skills.db">Базы данных</h3>
+                    <p data-i18n="skills.db.desc">PostgreSQL, MongoDB</p>
                 </div>
-                <div class="skill-card reveal" data-delay="300">
+                <div class="skill-card reveal">
                     <div class="skill-icon">🎨</div>
-                    <h3>UI/UX Design</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="78"></div>
-                    </div>
-                    <p>Figma, Responsive Design</p>
+                    <h3 data-i18n="skills.design">UI/UX Design</h3>
+                    <p data-i18n="skills.design.desc">Figma, Responsive Design</p>
                 </div>
-                <div class="skill-card reveal" data-delay="400">
+                <div class="skill-card reveal">
                     <div class="skill-icon">☁️</div>
-                    <h3>DevOps & Tools</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="75"></div>
-                    </div>
-                    <p>Docker, Git, Linux</p>
+                    <h3 data-i18n="skills.devops">DevOps & Tools</h3>
+                    <p data-i18n="skills.devops.desc">Docker, Git, Linux</p>
                 </div>
-                <div class="skill-card reveal" data-delay="500">
+                <div class="skill-card reveal">
                     <div class="skill-icon">🔒</div>
-                    <h3>Безопасность</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="80"></div>
-                    </div>
-                    <p>JWT, OAuth, SSL/TLS</p>
+                    <h3 data-i18n="skills.sec">Безопасность</h3>
+                    <p data-i18n="skills.sec.desc">JWT, OAuth, SSL/TLS</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Проекты -->
+    <!-- Projects -->
     <section class="projects" id="projects">
         <div class="container">
-            <h2 class="section-title reveal">Мои проекты</h2>
-            <p class="section-subtitle reveal">Некоторые из моих последних работ</p>
-
+            <h2 class="section-title reveal" data-i18n="projects.title">Мои проекты</h2>
+            <p class="section-subtitle reveal" data-i18n="projects.subtitle">Некоторые из моих последних работ</p>
             <div class="projects__grid">
-                <!-- Проект 1 -->
-                <article class="project-card reveal" data-category="web">
+                <div class="project-card reveal">
                     <div class="project-image">
                         <div class="project-placeholder">🛒</div>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://www.colizeumramenskoe-sovetskaya.ru/" class="project-link" aria-label="Подробнее">Подробнее</a>
-                                <a href="https://www.colizeumramenskoe-sovetskaya.ru/" class="project-demo" aria-label="Live Demo" title="Live Demo">🔗</a>
-                                <a href="https://github.com/Egorkaxoka" class="project-github" aria-label="GitHub" title="GitHub">⭐</a>
+                                <a href="https://www.colizeumramenskoe-sovetskaya.ru/" class="project-demo" target="_blank" data-i18n="projects.p1.link">Подробнее</a>
+                                <a href="https://github.com/Egorkaxoka" class="project-github" target="_blank">⭐ GitHub</a>
                             </div>
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>Сайт-визитка компютерного клуба</h3>
-                        <p>Одностраничный лендинг, с возможностью забронировать место, виртуально посмотреть на клуб с помощью интерактивной карты</p>
+                        <h3 data-i18n="projects.p1.title">Сайт-визитка компютерного клуба</h3>
+                        <p data-i18n="projects.p1.desc">Одностраничный лендинг, с возможностью забронировать место, виртуально посмотреть на клуб с помощью интерактивной карты</p>
                         <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JS</span>
+                            <span>HTML</span><span>CSS</span><span>JS</span>
                         </div>
                     </div>
-                </article>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Контакты -->
-<section id="contact" class="contact">
-    <div class="container">
-        <h2 class="section-title reveal">Связаться со мной</h2>
-        <p class="section-subtitle reveal">Готов обсудить ваш проект или предложение о работе</p>
-        <div class="contact__grid">
-            <div class="reveal">
-                <div class="contact-item">
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title reveal" data-i18n="contact.title">Связаться со мной</h2>
+            <p class="section-subtitle reveal" data-i18n="contact.subtitle">Готов обсудить ваш проект или предложение о работе</p>
+            <div class="contact__grid">
+                <div class="contact-item reveal">
                     <div class="contact-icon">📧</div>
                     <div>
-                        <h4>Email</h4>
+                        <h4 data-i18n="contact.email">Email</h4>
                         <a href="mailto:t_egor69_t@mail.ru">t_egor69_t@mail.ru</a>
                     </div>
                 </div>
-                <div class="contact-item">
+                <div class="contact-item reveal">
                     <div class="contact-icon">📱</div>
                     <div>
-                        <h4>Телефон</h4>
+                        <h4 data-i18n="contact.phone">Телефон</h4>
                         <a href="tel:+79771059751">+7 (977) 105-97-51</a>
                     </div>
                 </div>
-                <div class="contact-item">
+                <div class="contact-item reveal">
                     <div class="contact-icon">📍</div>
                     <div>
-                        <h4>Локация</h4>
-                        <p>Раменское, Россия</p>
+                        <h4 data-i18n="contact.location">Локация</h4>
+                        <p data-i18n="contact.location.val">Раменское, Россия</p>
                     </div>
                 </div>
-                <div class="social-links">
-                    <a href="https://github.com/Egorkaxoka" class="social-link" target="_blank" rel="noopener">🐙</a>
-                    <a href="https://t.me/Eodin911" class="social-link" target="_blank" rel="noopener">✈️</a>
-                </div>
+            </div>
+            <div class="social-links reveal">
+                <a href="https://github.com/Egorkaxoka" class="social-link" target="_blank">🐙</a>
+                <a href="https://t.me/Eodin911" class="social-link" target="_blank">✈️</a>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-    <!-- Футер -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024-<span id="year"></span> Егор Темников. Все права защищены.</p>
+            <p data-i18n="footer.copy">© 2024-2026 Егор Темников. Все права защищены.</p>
         </div>
     </footer>
 
-    <!-- Кнопка наверх -->
-    <button class="scroll-top" id="scrollTop" aria-label="Наверх">↑</button>
-
-    <!-- Уведомление -->
-    <div class="toast" id="toast"></div>
+    <!-- Scroll Top -->
+    <button class="scroll-top" id="scrollTop">↑</button>
 
     <script src="script.js"></script>
 </body>
